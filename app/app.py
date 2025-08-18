@@ -1,3 +1,8 @@
+
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import streamlit as st
 from utils.heart_score import calculate_heart_score
 from utils.translator import translate_text
