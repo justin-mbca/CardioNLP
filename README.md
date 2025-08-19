@@ -26,10 +26,10 @@ This project reflects Sanofi’s mission to use AI for good, promote health equi
 ```mermaid
 graph TD
 	A[Raw Data] --> B[Preprocessing]
-	B --> C[Model Training (XGBoost/PyTorch)]
-	C --> D[Explainability (SHAP)]
+	B --> C[Model Training - XGBoost/PyTorch]
+	C --> D[Explainability - SHAP]
 	D --> E[Visualization & Reporting]
-	E --> F[Deployment (Streamlit/Jupyter)]
+	E --> F[Deployment - Streamlit/Jupyter]
 ```
 ```bash
 pip install -r requirements.txt
