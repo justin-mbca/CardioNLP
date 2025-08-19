@@ -21,6 +21,16 @@ This project reflects Sanofi’s mission to use AI for good, promote health equi
 * Streamlit app for interactive use
 
 ## 📦 How to Run
+## 🛠️ Project Workflow
+
+```mermaid
+graph TD
+	A[Raw Data] --> B[Preprocessing]
+	B --> C[Model Training (XGBoost/PyTorch)]
+	C --> D[Explainability (SHAP)]
+	D --> E[Visualization & Reporting]
+	E --> F[Deployment (Streamlit/Jupyter)]
+```
 ```bash
 pip install -r requirements.txt
 streamlit run app/app.py
@@ -28,15 +38,24 @@ streamlit run app/app.py
 
 ## 📊 Notebooks
 
-Jupyter notebooks for data exploration, model training, NLP, and fairness/bias analysis are in `notebooks/`.
 
-### Fairness Analysis (04_bias_fairness_analysis.ipynb)
+Jupyter notebooks for data exploration, model training, NLP, fairness/bias analysis, and advanced data science demonstrations are in `notebooks/`.
 
-This notebook evaluates model performance (ROC AUC) across ethnic groups. If a group contains only one class in the target variable, the code now skips AUC calculation for that group and prints a message, avoiding warnings and undefined metrics.
+### 00_literature_review.ipynb
+Summarizes key papers in cardiovascular AI, including deep learning for risk prediction, BioBERT for biomedical NLP, and fairness in medical AI.
 
-**Warning explained:**
-> Only one class is present in y_true. ROC AUC score is not defined in that case.
+### 01_data_exploration.ipynb
+Explores the dataset with pandas and seaborn, showing distributions, missing values, correlations, and categorical feature analysis.
 
-**How we handle it:**
-The code checks for this and skips AUC calculation for such groups, ensuring robust and interpretable fairness analysis.
+### 02_model_training.ipynb
+Trains an XGBoost model for cardiovascular risk prediction, evaluates performance (AUC), and demonstrates SHAP explainability.
+
+### 03_nlp_pipeline.ipynb
+Uses BioBERT and HuggingFace Transformers to extract clinical entities from text, demonstrating biomedical NLP.
+
+### 04_bias_fairness_analysis.ipynb
+Evaluates model fairness by calculating ROC AUC across ethnic groups, skipping groups with only one class in the target variable to avoid undefined metrics and warnings.
+
+### 05_data_scientist_demo.ipynb
+Demonstrates advanced analytics, machine learning (XGBoost, PyTorch), NLP, SQL, federated learning (Flower), and data visualization (Plotly) for a data scientist role.
 
